@@ -14,13 +14,7 @@
         }
       ],
       "command": [],
-      "portMappings": [
-        {
-          "hostPort": 9001,
-          "containerPort": 9000,
-          "protocol": "tcp"
-        }
-      ],
+      "portMappings": [],
       "volumesFrom": [],
       "links": [],
       "mountPoints": [
