@@ -1,0 +1,49 @@
+{
+  "family": "php-sample_domain_com",
+  "containerDefinitions": [
+    {
+      "name": "php-sample_domain_com",
+      "image": "matthewduren/docker-phpfpm",
+      "cpu": 512,
+      "memory": 1024,
+      "entryPoint": [],
+      "environment": [
+        {
+          "name": "VIRTUAL_HOST",
+          "value": "sample.domain.com"
+        }
+      ],
+      "command": [],
+      "portMappings": [],
+      "volumesFrom": [],
+      "links": [],
+      "mountPoints": [
+        {
+          "sourceVolume": "apps",
+          "containerPath": "/var/apps",
+          "readOnly": false
+        },
+        {
+          "sourceVolume": "logs",
+          "containerPath": "/var/logs/web",
+          "readOnly": false
+        }
+      ],
+      "essential": true
+    }
+  ],
+  "volumes": [
+    {
+      "name": "logs",
+      "host": {
+        "sourcePath": "/var/docker/logs/"
+      }
+    },
+    {
+      "name": "apps",
+      "host": {
+        "sourcePath": "/var/docker/apps/"
+      }
+    }
+  ]
+}

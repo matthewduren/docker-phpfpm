@@ -31,6 +31,7 @@ for _curVar in `env | grep APP_ | awk -F = '{print $1}'`;do
     setEnvironmentVariable $key $val
 done
 
+<<<<<<< HEAD
 # Check for xdebug
 if [[ "$APP_XDEBUG" == "true" ]]; then
     sed -i "s/\$VIRTUAL_HOST/$VIRTUAL_HOST/g" /etc/php5/mods-available/xdebug.ini.tmpl
@@ -41,4 +42,8 @@ fi
 # start php-fpm
 echo "Starting php5-fpm"
 php5enmod mcrypt > /dev/null 2>&1
+=======
+# start php-fpm
+echo "Starting php5-fpm"
+>>>>>>> 74a24699c58e1cf5d1c1c7d15bdc9026f7d8c43f
 exec /usr/sbin/php5-fpm
