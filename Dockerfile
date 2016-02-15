@@ -17,7 +17,6 @@ RUN apt-get -y install php5 \
                        php5-mcrypt \
                        php5-xmlrpc \
                        php5-curl \
-                       mono-complete \
                        php5-xdebug 
 
 RUN php5enmod mcrypt
